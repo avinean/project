@@ -106,7 +106,6 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
-/cms/public/uploads
 /cms/public/uploads/*
 
 ############################

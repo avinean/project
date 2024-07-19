@@ -4,27 +4,36 @@ services:
     build:
       context: ./docker/cms
       dockerfile: Dockerfile
+      args:
+        NODE_ENV: ${NODE_ENV:-development}
     ports:
-      - "1337:${STRAPI_PORT}"
+      - "1337:1337"
     networks:
       - lapp
     volumes:
       - ./cms:/cms
-    command: sh -c "npm install && npm run develop"
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+    command: sh -c "if [ \"$NODE_ENV\" = 'production' ]; then npm run start; else npm install && npm run develop; fi"
     tty: true
 
   nuxt:
     build:
       context: ./docker/ui
       dockerfile: Dockerfile
+      args:
+        NODE_ENV: ${NODE_ENV:-development}
     ports:
-      - "3000:${NUXT_PORT}"
+      - "3000:3000"
     networks:
       - lapp
     volumes:
       - ./ui:/ui
-    command: sh -c "npm install && npm run dev"
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+    command: sh -c "if [ \"$NODE_ENV\" = 'production' ]; then npm run build && npm run start; else npm install && npm run dev; fi"
     tty: true
+
 networks:
   lapp:
     driver: bridge

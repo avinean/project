@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     '@/assets/global.css',
   ],
   strapi: {
-    url: process.env.STRAPI_URL || 'http://localhost:1337',
+    url: process.env.API_BASE_URL,
     prefix: '/api',
     admin: '/admin',
     version: 'v4',
@@ -33,7 +33,10 @@ export default defineNuxtConfig({
   },
   routeRules:{
     '/api/**': {
-      proxy: `${process.env.API_BASE_URL}/**`,
+      proxy: `${process.env.API_BASE_URL}/api/**`,
+    },
+    '/admin/**': {
+      proxy: `${process.env.API_BASE_URL}/admin/**`,
     },
     '/uploads/**': {
       proxy: `${process.env.API_BASE_URL}/uploads/**`,
@@ -41,7 +44,7 @@ export default defineNuxtConfig({
   },
   image: {
     strapi: {
-      baseURL: process.env.STRAPI_IMAGE_URL || 'http://localhost:1337/'
+      baseURL: process.env.API_BASE_URL
     }
   },
   extends: [
