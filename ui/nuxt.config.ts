@@ -31,17 +31,6 @@ export default defineNuxtConfig({
     cookieName: 'strapi_jwt',
     devtools: true,
   },
-  routeRules:{
-    '/api/**': {
-      proxy: `${process.env.API_BASE_URL}/api/**`,
-    },
-    '/admin/**': {
-      proxy: `${process.env.API_BASE_URL}/admin/**`,
-    },
-    '/uploads/**': {
-      proxy: `${process.env.API_BASE_URL}/uploads/**`,
-    },
-  },
   image: {
     strapi: {
       baseURL: process.env.API_BASE_URL

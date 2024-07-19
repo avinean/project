@@ -14,7 +14,7 @@ services:
       - ./cms:/cms
     environment:
       NODE_ENV: ${NODE_ENV:-development}
-    command: sh -c "if [ \"$NODE_ENV\" = 'production' ]; then npm run start; else npm install && npm run develop; fi"
+    command: sh -c "if [ \"$NODE_ENV\" = 'production' ]; then npm run build && npm run start; else npm install && npm run develop; fi"
     tty: true
 
   nuxt:
