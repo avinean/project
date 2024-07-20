@@ -10,13 +10,13 @@ const { height } = useElementBounding(header)
       class="p-4 sticky top-0 z-10 bg-white border-b"
     >
       <nav class="flex gap-4">
-        <a href="#hero">Hero</a>
-        <a href="#about-us">About Us</a>
-        <a href="#interesting">Interesting</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#products">Products</a>
+        <a href="/#hero">Hero</a>
+        <a href="/#about-us">About Us</a>
+        <a href="/#interesting">Interesting</a>
+        <a href="/#certificates">Certificates</a>
+        <a href="/#products">Products</a>
         <div class="flex-1" />
-        <a href="#contacts">Contacts</a>
+        <a href="/#contacts">Contacts</a>
       </nav>
     </header>
     <main :style="{ '--header-height': `${height}px` }">

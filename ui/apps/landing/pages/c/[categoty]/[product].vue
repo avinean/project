@@ -8,7 +8,7 @@ console.log(data)
 <template>
   <div class="grid grid-cols-2">
     <div>
-      <UCarousel v-if="data.attributes.gallery.data.length" v-slot="{ item }" :items="data.attributes.gallery.data">
+      <UCarousel v-if="data.attributes.gallery.data?.length" v-slot="{ item }" :items="data.attributes.gallery.data">
         <div class="p-2">
           <CmsImage v-bind="item.attributes" />
         </div>
