@@ -964,6 +964,7 @@ export interface ApiSectionSection extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    content: Attribute.DynamicZone<['test.test']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

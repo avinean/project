@@ -26,7 +26,7 @@ function tag(config: RichTextInput[number]) {
       <CmsRichText :content="section.children"/>
     </ULink>
     <CmsImage  v-else-if="section.type === 'image'" v-bind="section.image"/>
-    <component v-else :is="tag(section)">
+    <component :is="tag(section)" v-else>
       <CmsRichText :content="section.children"/>
     </component>
   </template>

@@ -25,6 +25,12 @@
         "videos",
         "audios"
       ]
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "test.test"
+      ]
     }
   }
 }

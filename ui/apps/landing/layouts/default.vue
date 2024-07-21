@@ -7,16 +7,16 @@ const { height } = useElementBounding(header)
   <div>
     <header
       ref="header"
-      class="p-4 sticky top-0 z-10 bg-white border-b"
+      class="p-4 sticky top-0 z-10"
     >
-      <nav class="flex gap-4">
-        <a href="/#hero">Hero</a>
-        <a href="/#about-us">About Us</a>
-        <a href="/#interesting">Interesting</a>
+      <nav class="flex justify-between items-center gap-4 container mx-auto">
         <a href="/#certificates">Certificates</a>
         <a href="/#products">Products</a>
-        <div class="flex-1" />
+        <a href="/#hero">
+          <NuxtImg src="/logo.svg" alt="logo"  height="50"/>
+        </a>
         <a href="/#contacts">Contacts</a>
+        <a href="/#about-us">About Us</a>
       </nav>
     </header>
     <main :style="{ '--header-height': `${height}px` }">
